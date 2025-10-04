@@ -44,10 +44,6 @@
       "allowedTools": [],
       "history": [
         {
-          "display": "提交并推送所有的代码",
-          "pastedContents": {}
-        },
-        {
           "display": "帮我为当前项目，初始化git",
           "pastedContents": {}
         },
