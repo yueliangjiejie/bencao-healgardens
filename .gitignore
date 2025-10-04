@@ -1,0 +1,63 @@
+# Windows system files
+NTUSER.DAT*
+ntuser.*
+*.LOG1
+*.LOG2
+*.blf
+*.regtrans-ms
+
+# System directories
+AppData/
+Local Settings/
+Application Data/
+My Documents/
+Recent/
+SendTo/
+Templates/
+PrintHood/
+NetHood/
+Cookies/
+3D Objects/
+Contacts/
+Favorites/
+Links/
+Music/
+Pictures/
+Videos/
+Saved Games/
+Searches/
+Downloads/
+Documents/
+OneDrive/
+IntelGraphicsProfiles/
+WindowsPcManager/
+WPS Cloud Files/
+CodeGeeXProjects/
+ansel/
+「开始」菜单/
+
+# Application data directories
+.android/
+.cache/
+.chatlog/
+.claude/
+.claude-code-router/
+.codegeex/
+.codeverse/
+.config/
+.cursor/
+.idlerc/
+.local/
+.ms-ad/
+.MUMUVMM/
+.ssh/
+.trae-aicc/
+.trae-cn/
+.ufomiao/
+.vscode/
+.marscode/
+
+# Keep only specific configuration files
+!.gitconfig
+!.claude.json
+!settings.json
