@@ -70,7 +70,36 @@ type Phase = 'select' | 'playing' | 'settlement' | 'gameover'
 export default function PhysioLimitGame({ onBack }: { onBack: () => void }) {
   return (
     <FeedbackProvider>
-      <PhysioLimitGameInner onBack={onBack} />
+      {/* 游戏使用独立的深蓝灰背景，不受浅色/深色主题切换影响 */}
+      <style dangerouslySetInnerHTML={{ __html: `
+        .physio-game-scope .card {
+          background: rgba(30, 41, 59, 0.7) !important;
+          border-color: rgba(100, 116, 139, 0.18) !important;
+        }
+        .physio-game-scope .card:hover {
+          border-color: rgba(100, 116, 139, 0.35) !important;
+          box-shadow: 0 4px 20px rgba(0,0,0,0.25) !important;
+        }
+        .physio-game-scope .btn-gold {
+          background: linear-gradient(135deg, #C8A951, #A68B3C) !important;
+          color: #1a1a1a !important;
+        }
+        .physio-game-scope .text-gray-500 {
+          color: rgba(148, 163, 184, 1) !important;
+        }
+        .physio-game-scope .text-gray-600 {
+          color: rgba(148, 163, 184, 0.7) !important;
+        }
+        .physio-game-scope .text-gray-700 {
+          color: rgba(148, 163, 184, 0.5) !important;
+        }
+        .physio-game-scope .bg-gray-800 {
+          background-color: rgba(30, 41, 59, 1) !important;
+        }
+      `}} />
+      <div className="physio-game-scope flex flex-col h-full" style={{ background: 'linear-gradient(180deg, #0c1220 0%, #111827 40%, #0f172a 100%)', color: '#e2e8f0', minHeight: '100dvh' }}>
+        <PhysioLimitGameInner onBack={onBack} />
+      </div>
     </FeedbackProvider>
   )
 }
@@ -496,7 +525,7 @@ function PhysioLimitGameInner({ onBack }: { onBack: () => void }) {
 
       {/* 顶部导航 */}
       <div className="flex items-center gap-3 px-4 pt-4 pb-3 sticky top-0 z-10"
-        style={{ background: 'rgba(10,10,15,0.95)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+        style={{ background: 'linear-gradient(180deg, rgba(15,23,42,0.98) 0%, rgba(15,23,42,0.92) 100%)', borderBottom: '1px solid rgba(100,116,139,0.15)', backdropFilter: 'blur(12px)' }}>
         <button onClick={() => { if (phase === 'playing') setPhase('select'); else onBack() }} className="p-1">
           <ArrowLeft size={20} className="text-gray-400" />
         </button>
@@ -716,7 +745,7 @@ function GamePlay({
   if (narrativeText) {
     return (
       <div className="flex-1 flex flex-col items-center justify-center px-6 text-center"
-        style={{ background: 'rgba(0,0,0,0.95)' }}>
+        style={{ background: 'rgba(15,23,42,0.97)' }}>
         <div className="max-w-[340px] animate-fade-in">
           <p className="text-sm text-gray-300 leading-relaxed whitespace-pre-line mb-6">{narrativeText}</p>
           <button onClick={onClearNarrative} className="btn-gold px-6 py-2.5 text-sm">
@@ -731,7 +760,7 @@ function GamePlay({
   if (choiceResult) {
     return (
       <div className="flex-1 flex flex-col items-center justify-center px-6 text-center"
-        style={{ background: 'rgba(0,0,0,0.95)' }}>
+        style={{ background: 'rgba(15,23,42,0.97)' }}>
         <div className="max-w-[340px] animate-fade-in">
           <div className="text-3xl mb-3">📊</div>
           <h3 className="text-base font-bold text-white mb-3">选择效果</h3>
@@ -757,7 +786,7 @@ function GamePlay({
   if (delayedNotifications.length > 0) {
     return (
       <div className="flex-1 flex flex-col items-center justify-center px-6 text-center"
-        style={{ background: 'rgba(0,0,0,0.95)' }}>
+        style={{ background: 'rgba(15,23,42,0.97)' }}>
         <div className="max-w-[340px] animate-fade-in">
           <div className="text-4xl mb-4">⏰</div>
           <h3 className="text-lg font-bold text-white mb-3">延迟效应显现</h3>
@@ -1023,7 +1052,7 @@ function GamePlay({
       {/* 教学提示 */}
       {showTip && (
         <div className="fixed inset-0 z-50 flex items-end justify-center p-4"
-          style={{ background: 'rgba(0,0,0,0.7)' }} onClick={() => onShowTip(null)}>
+          style={{ background: 'rgba(15,23,42,0.85)' }} onClick={() => onShowTip(null)}>
           <div className="card w-full max-w-[400px] p-4 animate-slide-up" style={{ borderColor: 'rgba(255,215,0,0.2)' }}>
             <h4 className="text-xs font-bold text-yellow-400 mb-2">💡 生理知识</h4>
             <p className="text-sm text-gray-300 leading-relaxed">{showTip}</p>
@@ -1274,7 +1303,7 @@ function ChronicGamePlay({
   if (narrative) {
     return (
       <div className="flex-1 flex flex-col items-center justify-center px-6 text-center"
-        style={{ background: 'rgba(0,0,0,0.95)' }}>
+        style={{ background: 'rgba(15,23,42,0.97)' }}>
         <div className="max-w-[340px] animate-fade-in">
           <p className="text-sm text-gray-300 leading-relaxed whitespace-pre-line mb-6">{narrative}</p>
           <button onClick={onClearNarrative} className="btn-gold px-6 py-2.5 text-sm">
