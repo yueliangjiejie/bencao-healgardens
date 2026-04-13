@@ -1,0 +1,202 @@
+@import "tailwindcss";
+
+/* ═══════════════════════════════════════════════ */
+/* 本草纲目药膳小镇 - 全局样式                       */
+/* ═══════════════════════════════════════════════ */
+
+:root {
+  --bg-primary: #FAF7F0;
+  --bg-secondary: #F0EBE0;
+  --bg-card: #FFFFFF;
+  --bg-tab: rgba(255,255,255,0.92);
+  --text-primary: #2C1810;
+  --text-secondary: #8B7355;
+  --gold: #C8A951;
+  --gold-light: #FFD700;
+  --green: #4A7C59;
+  --red: #E85D4A;
+  --border: rgba(0,0,0,0.08);
+}
+
+.dark {
+  --bg-primary: #0F1419;
+  --bg-secondary: #1A2332;
+  --bg-card: #1E2D3D;
+  --bg-tab: rgba(15,20,25,0.92);
+  --text-primary: #F0E6D3;
+  --text-secondary: #8B9CAF;
+  --gold: #FFD700;
+  --gold-light: #FFE44D;
+  --green: #5DA06E;
+  --red: #FF6B58;
+  --border: rgba(255,255,255,0.08);
+}
+
+@theme inline {
+  --color-background: var(--bg-primary);
+  --color-foreground: var(--text-primary);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior: none;
+}
+
+/* ─── 马匹动画 ─── */
+@keyframes horseIdle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+@keyframes horseHappy {
+  0%, 100% { transform: scale(1) rotate(0); }
+  25% { transform: scale(1.1) rotate(-5deg); }
+  75% { transform: scale(1.1) rotate(5deg); }
+}
+@keyframes horseEating {
+  0%, 100% { transform: rotate(0); }
+  25% { transform: rotate(8deg); }
+  75% { transform: rotate(-8deg); }
+}
+@keyframes horsePlaying {
+  0%, 100% { transform: translateX(0) rotate(0); }
+  25% { transform: translateX(-8px) rotate(-8deg); }
+  75% { transform: translateX(8px) rotate(8deg); }
+}
+@keyframes horseSleeping {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(0.95); opacity: 0.7; }
+}
+@keyframes horseSad {
+  0%, 100% { transform: translateY(0) rotate(0); }
+  50% { transform: translateY(3px) rotate(-2deg); }
+}
+@keyframes horseExcited {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-16px) scale(1.05); }
+}
+@keyframes horseContent {
+  0%, 100% { transform: scale(1) rotate(0); }
+  50% { transform: scale(1.03) rotate(2deg); }
+}
+
+@keyframes particleFloat {
+  0% { transform: translate(0, 0) scale(1); opacity: 1; }
+  100% { transform: translate(var(--px, 30px), var(--py, -60px)) scale(0.5); opacity: 0; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-gold {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255,215,0,0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(255,215,0,0); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-fade-in { animation: fadeIn 0.4s ease-out; }
+.animate-slide-up { animation: slideUp 0.5s ease-out; }
+
+/* ─── 卡片通用样式 ─── */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px;
+  transition: all 0.2s ease;
+}
+.card:hover {
+  border-color: var(--gold);
+  box-shadow: 0 4px 20px rgba(200,169,81,0.15);
+}
+
+/* ─── 金色按钮 ─── */
+.btn-gold {
+  background: linear-gradient(135deg, var(--gold), #A68B3C);
+  color: #1a1a1a;
+  font-weight: 700;
+  border-radius: 12px;
+  padding: 10px 20px;
+  transition: all 0.2s;
+  border: none;
+  cursor: pointer;
+}
+.btn-gold:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(200,169,81,0.4);
+}
+.btn-gold:active {
+  transform: scale(0.97);
+}
+
+/* ─── 玻璃态 ─── */
+.glass {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* ─── 标签 ─── */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* ─── 滚动条 ─── */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--text-secondary); border-radius: 4px; }
+
+/* ─── 全屏面板 ─── */
+.fullscreen-panel {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: var(--bg-primary);
+  overflow-y: auto;
+  animation: slideUp 0.35s ease-out;
+}
+
+/* ─── 进度条动画 ─── */
+.progress-bar {
+  transition: width 0.5s ease;
+}
+
+/* ─── 积分飘字动画 ─── */
+@keyframes floatUp {
+  0% { opacity: 1; transform: translateY(0) scale(1); }
+  100% { opacity: 0; transform: translateY(-40px) scale(0.8); }
+}
+.animate-float-up {
+  animation: floatUp 1.5s ease-out forwards;
+}
+
+/* ─── 缩放弹入动画 ─── */
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+.animate-scale-in {
+  animation: scaleIn 0.3s ease-out;
+}

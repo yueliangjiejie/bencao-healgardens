@@ -1,0 +1,24 @@
+{
+  "name": "本草纲目药膳小镇",
+  "short_name": "药膳小镇",
+  "description": "以中医食疗养生减脂为核心的模拟经营养宠游戏",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0F1419",
+  "theme_color": "#D4AF37",
+  "orientation": "portrait",
+  "lang": "zh-CN",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["health", "lifestyle", "food"]
+}
