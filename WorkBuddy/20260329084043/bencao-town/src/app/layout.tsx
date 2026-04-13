@@ -78,6 +78,21 @@ export default function RootLayout({
 }) {
   return (
     <html lang="zh-CN" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: `
+          (function(){
+            try {
+              var t = localStorage.getItem('theme');
+              if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+                document.documentElement.style.colorScheme = 'dark';
+              } else {
+                document.documentElement.style.colorScheme = 'light';
+              }
+            } catch(e){}
+          })();
+        ` }} />
+      </head>
       <body className="min-h-dvh bg-[var(--bg-primary)] text-[var(--text-primary)]">
         <ThemeProvider>
           <JsonLd />

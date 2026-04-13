@@ -12,7 +12,10 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<Theme>('dark')
+  const [theme, setTheme] = useState<Theme>(() => {
+    // SSR 时返回默认值，但 inline script 已经设置了 dark class
+    return 'dark'
+  })
   const [mounted, setMounted] = useState(false)
 
   // 初始化主题：从 localStorage 读取或使用系统偏好
@@ -27,6 +30,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
       // 应用主题到 document
       if (typeof document !== 'undefined') {
         document.documentElement.classList.toggle('dark', initialTheme === 'dark')
+        document.documentElement.style.colorScheme = initialTheme === 'dark' ? 'dark' : 'light'
       }
     } catch (e) {
       // localStorage 可能在某些环境下不可用
@@ -43,6 +47,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
         localStorage.setItem('theme', theme)
         if (typeof document !== 'undefined') {
           document.documentElement.classList.toggle('dark', theme === 'dark')
+          document.documentElement.style.colorScheme = theme === 'dark' ? 'dark' : 'light'
         }
       } catch (e) {
         console.warn('Theme update failed:', e)
