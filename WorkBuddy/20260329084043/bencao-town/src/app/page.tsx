@@ -65,7 +65,6 @@ export default function HomePage() {
     { label: t.home.tcmHall, icon: '🏯', path: '/tcm', color: 'from-emerald-500/20 to-emerald-600/5' },
     { label: t.home.miniGames, icon: '🎮', path: '/games', color: 'from-blue-500/20 to-blue-600/5' },
     { label: '药箱管理', icon: '💊', path: '/record', color: 'from-teal-500/20 to-teal-600/5' },
-    { label: '产检记录', icon: '🤰', path: '/record', color: 'from-pink-500/20 to-pink-600/5' },
   ]
 
   const healthCards = [

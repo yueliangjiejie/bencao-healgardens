@@ -86,7 +86,6 @@ export default function NotificationCenter({ open, onClose, onBellClick }: Notif
     { label: t.notification.templates[3].label, emoji: '😴', icon: Moon, defaultHour: 22, desc: t.notification.templates[3].desc },
     { label: t.notification.templates[4].label, emoji: '🍵', icon: Coffee, defaultHour: 15, desc: t.notification.templates[4].desc },
     { label: '吃药提醒', emoji: '💊', icon: Pill, defaultHour: 8 },
-    { label: '产检提醒', emoji: '🤰', icon: Pill, defaultHour: 9 },
     { label: '疫苗提醒', emoji: '💉', icon: Pill, defaultHour: 9 },
   ]
 
@@ -201,7 +200,7 @@ export default function NotificationCenter({ open, onClose, onBellClick }: Notif
                 onChange={e => setNewEmoji(e.target.value)}
                 className="flex-1 px-3 py-2 rounded-lg border border-[var(--border)] bg-[var(--bg-primary)] text-sm focus:outline-none"
               >
-                {['⏰','💧','🏃','💊','😴','🍵','🥗','💪','🌿','🧘','🤰','💉','🩺','🏥'].map(em => (
+                {['⏰','💧','🏃','💊','😴','🍵','🥗','💪','🌿','🧘','💉','🩺','🏥'].map(em => (
                   <option key={em} value={em}>{em}</option>
                 ))}
               </select>

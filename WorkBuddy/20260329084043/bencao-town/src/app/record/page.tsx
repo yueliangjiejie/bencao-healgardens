@@ -5,13 +5,12 @@ import { useStore } from '@/lib/store'
 import { useTranslation } from '@/lib/i18n'
 import { dataService } from '@/lib/data-service'
 import type { DietRecord as DietRecordType } from '@/lib/database.types'
-import { Plus, TrendingDown, X, Camera, Sparkles, Loader2, CheckCircle2, AlertCircle, ChevronRight, UtensilsCrossed, Leaf, Flame, Droplets, Zap, Pill, Baby } from 'lucide-react'
+import { Plus, TrendingDown, X, Camera, Sparkles, Loader2, CheckCircle2, AlertCircle, ChevronRight, UtensilsCrossed, Leaf, Flame, Droplets, Zap, Pill } from 'lucide-react'
 import dynamic from 'next/dynamic'
 
 const MedicineTab = dynamic(() => import('@/components/record/MedicineTab'), { ssr: false })
-const PrenatalTab = dynamic(() => import('@/components/record/PrenatalTab'), { ssr: false })
 
-type RecordTab = 'diet' | 'weight' | 'medicine' | 'prenatal'
+type RecordTab = 'diet' | 'weight' | 'medicine'
 
 interface DietRecord {
   id: string
@@ -316,7 +315,6 @@ export default function RecordPage() {
           { key: 'diet', label: t.record.dietLog, emoji: '📝' },
           { key: 'weight', label: t.record.weightLog, emoji: '⚖️' },
           { key: 'medicine', label: '💊 药箱', emoji: '💊' },
-          { key: 'prenatal', label: '🤰 产检', emoji: '🤰' },
         ] as const).map((tb) => (
           <button
             key={tb.key}
@@ -459,11 +457,6 @@ export default function RecordPage() {
       {/*  💊 药箱管理 Tab                           */}
       {/* ════════════════════════════════════════ */}
       {tab === 'medicine' && <MedicineTab />}
-
-      {/* ════════════════════════════════════════ */}
-      {/*  🤰 产检报告 Tab                           */}
-      {/* ════════════════════════════════════════ */}
-      {tab === 'prenatal' && <PrenatalTab />}
 
       {/* ══════════════════════════════════════════════════ */}
       {/*  📸 AI 拍照识别弹窗                                        */}
