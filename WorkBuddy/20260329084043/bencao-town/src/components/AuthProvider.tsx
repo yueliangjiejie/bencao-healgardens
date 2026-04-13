@@ -1,5 +1,5 @@
 /**
- * 本草纲目药膳小镇 — Auth 初始化 Provider
+ * 本草纲目健康小镇 — Auth 初始化 Provider
  * 
  * 职责：
  * 1. 应用启动时检测 Supabase 连接状态

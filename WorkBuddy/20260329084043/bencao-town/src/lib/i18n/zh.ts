@@ -1,5 +1,5 @@
 // ═══════════════════════════════════════════════
-// 本草纲目药膳小镇 - 中文翻译（默认）
+// 本草纲目健康小镇 - 中文翻译（默认）
 // ═══════════════════════════════════════════════
 
 import type { Translations } from './types'
@@ -7,7 +7,7 @@ import type { Translations } from './types'
 const zh: Translations = {
   // ─── App 全局 ───
   app: {
-    name: '本草纲目药膳小镇',
+    name: '本草纲目健康小镇',
     subtitle: 'AI中医养生减脂',
     description: '以中医食疗养生减脂为核心的模拟经营养宠游戏，九种体质测评，药膳食疗，养马打卡',
     keywords: ['中医', '养生', '减脂', '药膳', '体质测评', '食疗', '本草纲目'],
@@ -47,7 +47,7 @@ const zh: Translations = {
     bag: '背包',
     growthRecord: '成长记录',
     gotIt: '知道了',
-    noHorseTitle: '本草纲目药膳小镇',
+    noHorseTitle: '本草纲目健康小镇',
     noHorseDesc1: '',
     noHorseDesc2: '领养一匹小马，开始你的养生之旅吧！',
     constitutionTag: '',
@@ -212,7 +212,7 @@ const zh: Translations = {
 
   // ─── 引导页 ───
   onboard: {
-    welcomeTitle: '本草纲目药膳小镇',
+    welcomeTitle: '本草纲目健康小镇',
     welcomeSubtitle1: '以中医食疗养生减脂为核心',
     welcomeSubtitle2: '养一匹小马，陪你走健康之路',
     quizTime: '约需 3~5 分钟',

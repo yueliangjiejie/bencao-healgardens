@@ -149,7 +149,7 @@ export default function LoginPage() {
                           shadow-lg shadow-emerald-500/25 mb-4">
             <span className="text-4xl">🌿</span>
           </div>
-          <h1 className="text-2xl font-bold text-white mb-1">本草纲目药膳小镇</h1>
+          <h1 className="text-2xl font-bold text-white mb-1">本草纲目健康小镇</h1>
           <p className="text-sm text-white/50">AI 中医食疗 · 养宠互动 · 科学减脂</p>
         </div>
 

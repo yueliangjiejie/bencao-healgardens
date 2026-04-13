@@ -3,8 +3,8 @@ export default function JsonLd() {
   const websiteSchema = {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
-    name: '本草纲目药膳小镇',
-    alternateName: 'Bencao Wellness Town',
+    name: '本草纲目健康小镇',
+    alternateName: 'Bencao Gangmu Health Town',
     description: '以中医食疗养生减脂为核心的模拟经营养宠游戏。AI食物识别、九种体质测评、药膳食疗方案、养马互动，21天科学减脂。',
     url: 'https://bencao.town',
     applicationCategory: 'HealthApplication',
@@ -28,7 +28,7 @@ export default function JsonLd() {
     ],
     author: {
       '@type': 'Organization',
-      name: '本草纲目药膳小镇',
+      name: '本草纲目健康小镇',
     },
   }
 

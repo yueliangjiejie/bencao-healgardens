@@ -7,29 +7,29 @@ import AuthProvider from '@/components/AuthProvider'
 
 export const metadata: Metadata = {
   title: {
-    default: '本草纲目药膳小镇 — AI中医食疗养生减脂',
-    template: '%s | 本草纲目药膳小镇',
+    default: '本草纲目健康小镇 — AI中医食疗养生减脂',
+    template: '%s | 本草纲目健康小镇',
   },
   description: '以中医食疗养生减脂为核心的模拟经营养宠游戏。AI食物识别、九种体质测评、药膳食疗方案、养马互动，21天科学减脂。',
   keywords: [
     '中医养生', '食疗减脂', '体质测评', '药膳', '本草纲目',
     'AI食物识别', '九种体质', '健康减脂', '养生游戏', '减脂训练营',
-    '中医馆', '药膳小镇', '马匹养成', '健康记录',
+    '中医馆', '健康小镇', '马匹养成', '健康记录',
     'TCM wellness', 'constitution assessment', 'medicinal diet', 'AI food recognition',
   ],
-  authors: [{ name: '本草纲目药膳小镇' }],
-  creator: '本草纲目药膳小镇',
-  publisher: '本草纲目药膳小镇',
+  authors: [{ name: '本草纲目健康小镇' }],
+  creator: '本草纲目健康小镇',
+  publisher: '本草纲目健康小镇',
   metadataBase: new URL('https://bencao.town'),
   alternates: {
     canonical: '/',
     languages: { 'zh-CN': '/', 'en': '/?lang=en' },
   },
   openGraph: {
-    title: '本草纲目药膳小镇 — AI中医食疗养生减脂',
+    title: '本草纲目健康小镇 — AI中医食疗养生减脂',
     description: 'AI食物识别 + 九种体质测评 + 药膳食疗 + 养马互动，21天科学减脂之旅',
     url: 'https://bencao.town',
-    siteName: '本草纲目药膳小镇',
+    siteName: '本草纲目健康小镇',
     locale: 'zh_CN',
     type: 'website',
     images: [
@@ -37,13 +37,13 @@ export const metadata: Metadata = {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: '本草纲目药膳小镇',
+        alt: '本草纲目健康小镇',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: '本草纲目药膳小镇 — AI中医食疗养生减脂',
+    title: '本草纲目健康小镇 — AI中医食疗养生减脂',
     description: 'AI食物识别 + 九种体质测评 + 药膳食疗 + 养马互动',
     images: ['/og-image.png'],
   },

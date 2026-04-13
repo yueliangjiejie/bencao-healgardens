@@ -1,5 +1,5 @@
 // ═══════════════════════════════════════════════
-// 本草纲目药膳小镇 - English Translations
+// 本草纲目健康小镇 - English Translations
 // ═══════════════════════════════════════════════
 
 import type { Translations } from './types'
@@ -7,7 +7,7 @@ import type { Translations } from './types'
 const en: Translations = {
   // ─── App Global ───
   app: {
-    name: 'Bencao Wellness Town',
+    name: 'Bencao Gangmu Health Town',
     subtitle: 'AI TCM Wellness & Fat Loss',
     description: 'A simulation pet game centered on TCM dietary therapy for wellness and fat loss. Constitution assessment, medicinal diet, horse care check-ins.',
     keywords: ['TCM', 'wellness', 'fat loss', 'medicinal diet', 'constitution quiz', 'diet therapy', 'Bencao Gangmu'],
@@ -47,7 +47,7 @@ const en: Translations = {
     bag: 'Bag',
     growthRecord: 'Growth Log',
     gotIt: 'Got it',
-    noHorseTitle: 'Bencao Wellness Town',
+    noHorseTitle: 'Bencao Gangmu Health Town',
     noHorseDesc1: '',
     noHorseDesc2: 'Adopt a horse and start your wellness journey!',
     constitutionTag: '',
@@ -212,7 +212,7 @@ const en: Translations = {
 
   // ─── Onboarding ───
   onboard: {
-    welcomeTitle: 'Bencao Wellness Town',
+    welcomeTitle: 'Bencao Gangmu Health Town',
     welcomeSubtitle1: 'TCM dietary therapy for wellness & fat loss',
     welcomeSubtitle2: 'Raise a horse on your health journey',
     quizTime: '~3-5 minutes',

@@ -1,5 +1,5 @@
 -- ═══════════════════════════════════════════════════════════
--- 本草纲目药膳小镇 — 企业版数据库 Schema v1.0
+-- 本草纲目健康小镇 — 企业版数据库 Schema v1.0
 -- 对应 enterprise-schema-v1.sql 的 Supabase 迁移文件
 --
 -- 使用方式: supabase db push 或在 Dashboard SQL Editor 执行
