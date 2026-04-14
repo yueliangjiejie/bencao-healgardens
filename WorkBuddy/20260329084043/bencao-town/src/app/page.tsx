@@ -8,6 +8,7 @@ import { useStore, Constitution } from '@/lib/store'
 import { useTranslation } from '@/lib/i18n'
 import { Flame, Scale, Calendar, Coins, ChevronRight, Bell, Sparkles } from 'lucide-react'
 import { useRouter } from 'next/navigation'
+import AIChatAssistant from '@/components/AIChatAssistant'
 
 // ─── 飘字动画数据结构 ───
 interface FloatingPoint {
@@ -214,6 +215,9 @@ export default function HomePage() {
           ))}
         </div>
       </div>
+
+      {/* AI智能体 */}
+      <AIChatAssistant />
 
       {/* 通知中心侧边栏 */}
       <NotificationCenter

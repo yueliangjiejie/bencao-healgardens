@@ -2,18 +2,20 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { ArrowLeft, Building2, Users, CreditCard, BarChart3, Shield } from 'lucide-react'
+import { ArrowLeft, Building2, Users, CreditCard, BarChart3, Shield, BookOpen } from 'lucide-react'
 import AdminTenantsTab from './AdminTenantsTab'
 import AdminUsersTab from './AdminUsersTab'
 import AdminSubscriptionsTab from './AdminSubscriptionsTab'
 import AdminStatsTab from './AdminStatsTab'
+import AdminKnowledgeTab from './AdminKnowledgeTab'
 
-type TabId = 'tenants' | 'users' | 'subscriptions' | 'stats'
+type TabId = 'tenants' | 'users' | 'subscriptions' | 'stats' | 'knowledge'
 const TABS: { id: TabId; label: string; icon: React.ComponentType<{ size?: number; style?: React.CSSProperties }> }[] = [
   { id: 'tenants', label: '企业管理', icon: Building2 },
   { id: 'users', label: '用户管理', icon: Users },
   { id: 'subscriptions', label: '订阅', icon: CreditCard },
   { id: 'stats', label: '全局统计', icon: BarChart3 },
+  { id: 'knowledge', label: '知识库', icon: BookOpen },
 ]
 
 export default function AdminPage() {
@@ -26,6 +28,7 @@ export default function AdminPage() {
       case 'users': return <AdminUsersTab />
       case 'subscriptions': return <AdminSubscriptionsTab />
       case 'stats': return <AdminStatsTab />
+      case 'knowledge': return <AdminKnowledgeTab />
     }
   }
 
